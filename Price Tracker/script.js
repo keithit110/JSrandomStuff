@@ -8,7 +8,7 @@ let price =null;
   ws.onmessage = function(event) {
   let stockObject = JSON.parse(event.data);
     // console.log(stockObject);
-  price = parseFloat(stockObject.p).toFixed(6); //decimal precision 
+  price = parseFloat(stockObject.p).toFixed(5); //decimal precision 
 
 }
 
