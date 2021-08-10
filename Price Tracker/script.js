@@ -25,7 +25,7 @@ const setPrice = function () {
     '\u2014',
     '\u2191',
     '\u2193'
-  )} ${coin}: $${price}`;
+  )} ${coin}: $${price}`.toUpperCase();
   lastPrice = price;
 };
 
