@@ -1,0 +1,16 @@
+<?php
+$walletAddress = $_POST['walletAddress'];
+
+$conn = new mysqli('localhost','root','','Axie');
+if($conn->connect_error){
+    die('Connection Failed : '.$conn->connect_error);
+    
+}else{
+    $stmt = $conn->prepare("insert into Wallets (WalletAddress) Values (?)");
+    $stmt->bind_param("s",$walletAddress);
+    $stmt->execute();
+    echo "Success";
+    $stmt->close();
+    $conn->close();
+}
+?>

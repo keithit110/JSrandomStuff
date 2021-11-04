@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="button acc-button">➕ Add Account</button>
+    <div class="container">
+      <table class="table table-stripped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>MMR</th>
+            <th>MMR Rank</th>
+            <th>SLP in Game</th>
+            <th>SLP Today</th>
+          </tr>
+        </thead>
+        <tbody id="data"></tbody>
+      </table>
+    </div>
+
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <form onsubmit="saveAccountData(); return false;">
+        <label for="alias" class="input-label">Account Name:</label>
+        <!-- <a href ="https://marketplace.axieinfinity.com/profile/ronin:6feedc707253d219ce844623a7caf1fe741e99e1/axie">Sample link</a> -->
+        <input
+          type="text"
+          id="alias"
+          name="alias"
+          class="input-field"
+          autofocus="autofocus"
+          placeholder="Ranjet"
+          onclick="this.style.color='gray'"
+        />
+        <label for="walletAddress" class="input-label">Ronin Address:</label>
+        <input
+          type="text"
+          id="walletAddress"
+          name="walletAddress"
+          class="input-field"
+          autofocus="autofocus"
+          placeholder="ronin:a5df31bb4cdd4c94e789c6d7ac302662ee7934b9"
+          onclick="this.style.color='gray'"
+        />
+        <label for="managerPercent" class="input-label"
+          >Manager Percentage:</label
+        >
+        <input
+          id="managerPercent"
+          name="managerPercent"
+          class="input-field last-field"
+          autofocus="autofocus"
+          placeholder="50"
+          onclick="this.style.color='gray'"
+          span
+          title="If you are the manager, put 100"
+        />
+        <input
+          type="submit"
+          class="button close-modal save-input"
+          value="Add Account"
+        />
+      </form>
+    </div>
+
+    <div class="overlay hidden"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
